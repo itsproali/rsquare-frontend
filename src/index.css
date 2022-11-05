@@ -6,11 +6,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Declare Variables */
+:root {
+  --primary: #6360AB;
+  --secondary: #DCDCE4;
+  --accent: #FAFAFA;
+  --neutral: #808080;
+}
+
 /* Basic CSS */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 html {
@@ -26,4 +34,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+input[type="checkbox"] {
+  height: 20px;
+  width: 20px;
 }

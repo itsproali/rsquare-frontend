@@ -8,10 +8,10 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#f48023",
-          secondary: "#3b83f6",
-          accent: "#bcbbbb",
-          neutral: "#9A9A9A",
+          primary: "#6360AB",
+          secondary: "#DCDCE4",
+          accent: "#FAFAFA",
+          neutral: "#808080",
           info: "#3ABFF8",
           success: "#36D399",
           warning: "#FBBD23",
