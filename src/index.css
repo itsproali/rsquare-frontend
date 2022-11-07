@@ -26,6 +26,7 @@ html {
 }
 
 body {
+  color: black;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,4 +45,15 @@ a {
 input[type="checkbox"] {
   height: 20px;
   width: 20px;
+}
+
+/* Custom Scrollbar */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  /* background-color: #aeaeafa1; */
+  background-color: gray;
+  border-radius: 5px;
 }

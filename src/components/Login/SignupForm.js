@@ -1,16 +1,37 @@
 import React from "react";
 import PrimaryButton from "../Button/PrimaryButton";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../redux/slices/tokenSlice";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = ({ setLogin }) => {
-  const handleLogin = (e) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const first_name = e.target.first_name.value;
     const last_name = e.target.last_name.value;
     const phone = e.target.phone.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const data = { first_name, last_name, email, phone, password };
-    console.log(data);
+    const info = { first_name, last_name, email, phone, password };
+    handleSignup(info);
+  };
+
+  const handleSignup = async (info) => {
+    try {
+      const { data } = await axios.post(
+        "http://localhost:5000/user/signup",
+        info
+      );
+      if (data.success) {
+        dispatch(setToken(data.token));
+        navigate("/");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
   };
   return (
     <div className="py-10 w-[95%]  md:w-[350px] xl:w-[750px] mx-auto sm:mx-4 xl:mx-20">
@@ -22,7 +43,7 @@ const SignupForm = ({ setLogin }) => {
           Get started with the best platform for design.
         </p>
       </div>
-      <form className="mt-10" onSubmit={handleLogin}>
+      <form className="mt-10" onSubmit={handleSubmit}>
         <div className="mb-6 flex flex-col sm:flex-row md:flex-col xl:flex-row items-center gap-3">
           <label htmlFor="first_name" className="w-full">
             <span className="text-sm block mb-1 text-black">First Name*</span>
@@ -111,9 +132,9 @@ const SignupForm = ({ setLogin }) => {
         </div>
 
         <div className="mt-10">
-          <label htmlFor="submit">
-            <PrimaryButton className="w-full xl:w-1/2">Sign Up</PrimaryButton>
+          <label htmlFor="submit" className="">
             <input type="submit" value="" />
+            <PrimaryButton className="w-full xl:w-1/2">Sign Up</PrimaryButton>
           </label>
         </div>
       </form>
