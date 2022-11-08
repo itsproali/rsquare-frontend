@@ -3,9 +3,11 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import PrimaryButton from "../../components/Button/PrimaryButton";
 import home_image from "../../assets/home_image.png";
 import ImageUploadModal from "../../components/Modal/ImageUploadModal";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { images } = useSelector((state) => state);
   return (
     <>
       {isOpen && <ImageUploadModal setIsOpen={setIsOpen} />}
@@ -15,7 +17,7 @@ const Home = () => {
             <h1 className="text-black font-semibold text-2xl md:text-3xl">
               Media Library
             </h1>
-            <p className="text-neutral">0 images</p>
+            <p className="text-neutral">{images.length} images</p>
           </div>
           <div className="">
             <PrimaryButton

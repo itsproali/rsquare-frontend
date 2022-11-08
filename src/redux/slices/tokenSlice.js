@@ -11,7 +11,7 @@ export const tokenSlice = createSlice({
   reducers: {
     setToken: (state, action) => {
       state = action.payload;
-      Cookies.set("token", JSON.stringify(action.payload));
+      Cookies.set("token", JSON.stringify(action.payload), { expires: 7 });
     },
   },
 });
