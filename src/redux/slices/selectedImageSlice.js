@@ -1,19 +1,19 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = { value: [] };
 
 export const selectedImageSlice = createSlice({
   name: "selected_image",
   initialState,
   reducers: {
     addSelectedImage: (state, action) => {
-      state.push(action.payload);
+      state.value.push(action.payload);
     },
     removeSelectedImage: (state, action) => {
-      state.splice(action.payload, 1);
+      state.value.splice(action.payload, 1);
     },
     clearSelectedImage: (state) => {
-      state.splice(0, state.length)
+      state.value.splice(0, state.length);
     },
   },
 });

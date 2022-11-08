@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
 
-const initialState = Cookies.get("token")
-  ? JSON.parse(Cookies.get("token"))
-  : "";
+const initialState = {
+  value: Cookies.get("token") ? JSON.parse(Cookies.get("token")) : "",
+};
 
 export const tokenSlice = createSlice({
   name: "token",
   initialState,
   reducers: {
     setToken: (state, action) => {
-      state = action.payload;
+      state.value = action.payload;
       Cookies.set("token", JSON.stringify(action.payload), { expires: 7 });
     },
   },

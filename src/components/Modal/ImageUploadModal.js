@@ -11,7 +11,7 @@ import { addImage } from "../../redux/slices/imageSlice";
 import apiClient from "../../hooks/apiClient";
 
 const ImageUploadModal = ({ setIsOpen }) => {
-  const { selected_image } = useSelector((state) => state);
+  const selected_image = useSelector((state) => state.selected_image.value);
   const dispatch = useDispatch();
   const [uploaded, setUploaded] = useState(null);
 
@@ -37,7 +37,7 @@ const ImageUploadModal = ({ setIsOpen }) => {
           setUploaded(Math.round(data.loaded / data.total) * 100);
         },
       });
-      console.log(data);
+
       if (data.success) {
         dispatch(addImage(data.data));
         dispatch(clearSelectedImage());
@@ -47,8 +47,6 @@ const ImageUploadModal = ({ setIsOpen }) => {
       console.log(error);
     }
   };
-
-  console.log(uploaded);
 
   return (
     <div className="bg-black bg-opacity-30 w-full h-full flex items-center justify-center fixed top-0 right-0 z-10">
