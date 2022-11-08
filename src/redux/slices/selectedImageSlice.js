@@ -7,13 +7,12 @@ export const selectedImageSlice = createSlice({
   initialState,
   reducers: {
     addSelectedImage: (state, action) => {
-      state = state.push(action.payload);
+      state.push(action.payload);
     },
     removeSelectedImage: (state, action) => {
       state.splice(action.payload, 1);
     },
     clearSelectedImage: (state) => {
-      console.log("clearing images");
       state.splice(0, state.length)
     },
   },

@@ -1,21 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
 
-// const initialState = Cookies.get("images")
-//   ? JSON.parse(Cookies.get("images"))
-//   : [];
-const initialState = [];
+const initialState = Cookies.get("images")
+  ? JSON.parse(Cookies.get("images"))
+  : [];
 
 export const imageSlice = createSlice({
   name: "images",
   initialState,
   reducers: {
     addImage: (state, action) => {
-      console.log(action.payload);
-      for (const image of action.payload) {
-        state.push(image);
-      }
-      Cookies.set("images", state)
+      state = action.payload;
+      Cookies.set("images", JSON.stringify(state));
     },
   },
 });

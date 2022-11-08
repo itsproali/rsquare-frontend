@@ -13,7 +13,7 @@ const Login = () => {
         <h1 className="text-4xl lg:text-5xl font-semibold text-white mb-6">
           Welcome to Rsquare
         </h1>
-        <p className="w-sm text-sm">
+        <p className="w-sm text-sm text-secondary">
           Lets get you all set up so start with your account and begin setting
           up your profile.
         </p>

@@ -37,6 +37,7 @@ const ImageUploadModal = ({ setIsOpen }) => {
           setUploaded(Math.round(data.loaded / data.total) * 100);
         },
       });
+      console.log(data);
       if (data.success) {
         dispatch(addImage(data.data));
         dispatch(clearSelectedImage());

@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const token = JSON?.parse(Cookies.get("token"));
+const token = Cookies.get("token") ? JSON.parse(Cookies.get("token")) : null;
 
 const apiClient = axios.create({
   baseURL: "http://localhost:5000",

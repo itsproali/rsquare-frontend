@@ -1,0 +1,10 @@
+.error_heading {
+    font-size: 200px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+    .error_heading {
+        font-size: 90px;
+    }
+}
