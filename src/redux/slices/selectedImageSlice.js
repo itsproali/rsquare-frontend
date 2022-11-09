@@ -13,7 +13,7 @@ export const selectedImageSlice = createSlice({
       state.value.splice(action.payload, 1);
     },
     clearSelectedImage: (state) => {
-      state.value.splice(0, state.length);
+      state.value = [];
     },
   },
 });

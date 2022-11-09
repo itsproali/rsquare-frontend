@@ -34,7 +34,7 @@ const ImageUploadModal = ({ setIsOpen }) => {
       }
       const { data } = await apiClient.patch("/image/upload", fd, {
         onUploadProgress: (data) => {
-          setUploaded(Math.round(data.loaded / data.total) * 100);
+          setUploaded(parseInt(Math.round((data.loaded * 100) / data.total)));
         },
       });
 
