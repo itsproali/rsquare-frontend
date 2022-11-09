@@ -83,7 +83,7 @@ const Home = () => {
                 className="rounded-lg shadow-lg flex flex-col justify-between relative"
               >
                 <img
-                  src={`http://localhost:5000/images/${image.path}`}
+                  src={`https://rsquare-itsproali.herokuapp.com/images/${image.path}`}
                   alt="library"
                   className="block rounded-t-lg h-60 sm:h-48 lg:h-52 2xl:h-60 border-b"
                 />
