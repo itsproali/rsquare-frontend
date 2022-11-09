@@ -10,8 +10,8 @@ export const checkedImageSlice = createSlice({
       state.value.push(action.payload);
     },
     removeCheckedImage: (state, action) => {
-      state.value.splice(action.payload, 1);
-    }
+      state.value.splice({ id: action.payload }, 1);
+    },
   },
 });
 

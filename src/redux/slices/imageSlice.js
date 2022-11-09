@@ -14,8 +14,9 @@ export const imageSlice = createSlice({
       Cookies.set("images", JSON.stringify(state.value));
     },
     deleteImage: (state, action) => {
-      const toRemove = new Set(action.payload);
-      const filter = state.value.filter((item) => !toRemove.has(item._id));
+      const toRemove = [];
+      action.payload.forEach((item) => toRemove.push(item.id));
+      const filter = state.value.filter((item) => !toRemove.includes(item._id));
       state.value = filter;
       Cookies.set("images", JSON.stringify(state.value));
     },
