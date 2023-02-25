@@ -19,7 +19,7 @@ const LoginForm = ({ setLogin }) => {
   const handleLogin = async (info) => {
     try {
       const { data } = await axios.post(
-        "https://rsquare-itsproali.herokuapp.com/user/login",
+        "https://rsquare-server.vercel.app/user/login",
         info
       );
       if (data.success) {

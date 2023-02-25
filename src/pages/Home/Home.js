@@ -98,7 +98,7 @@ const Home = () => {
                 className="rounded-lg shadow-lg flex flex-col justify-between relative"
               >
                 <img
-                  src={`https://rsquare-itsproali.herokuapp.com/images/${image.path}`}
+                  src={`https://rsquare-server.vercel.app/images/${image.path}`}
                   alt="library"
                   className="block rounded-t-lg h-60 sm:h-48 lg:h-52 2xl:h-60 border-b"
                 />

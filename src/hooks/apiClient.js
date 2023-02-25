@@ -4,7 +4,8 @@ import Cookies from "js-cookie";
 const token = Cookies.get("token") ? JSON.parse(Cookies.get("token")) : null;
 
 const apiClient = axios.create({
-  baseURL: "https://rsquare-itsproali.herokuapp.com",
+  // baseURL: "https://rsquare-itsproali.herokuapp.com",
+  baseURL: "https://rsquare-server.vercel.app",
 });
 
 apiClient.interceptors.request.use(
